@@ -1,0 +1,26 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.btn-form-princ
+  background-color: $cPrinc
+  height: 70px!important
+  border-radius: 5px
+  a
+    padding: 0px!important
+
+.btn-news-header
+  margin: 0 30px
+  padding: 0 20px!important
+  text-transform: uppercase
+  &:hover
+    background-color: $BgBtnHoverPink!important
+    box-shadow: unset!important
+  a:before
+    content: ''
+    background-image: url("../icons/icon-news.svg")
+    @include BgCover
+    margin-right: 20px
+    width: 30px
+    height: 30px
+
+

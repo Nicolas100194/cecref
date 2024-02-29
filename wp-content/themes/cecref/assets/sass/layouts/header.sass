@@ -1,0 +1,70 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+
+header
+  height: $HeightMenu
+  font-size: 18px
+  letter-spacing: 0.5px
+  background-color: $cSecond
+  display: flex
+  justify-content: space-between
+  .logo-header-desktop
+    .logo-default
+      display: block
+      height: 100%
+  .menu-menu-principal-container
+    ul
+      display: flex
+      height: 100%
+      align-items: center
+      li
+        height: 100%
+        display: flex
+        align-items: center
+        a
+          color: $cWhite
+          padding: 0 30px
+          z-index: 99
+          height: 100%
+          display: flex
+          align-items: center
+        &:hover
+          background-color: $cThirdVariantHover
+          box-shadow: inset 2px -35px 0 -30px $cPrinc
+      .li-active
+        background-color: $cThirdVariantHover
+        box-shadow: inset 2px -35px 0 -30px $cPrinc
+      .menu-item-has-children
+        a
+          padding: 0 15px 0 30px
+        &:after
+          content: ''
+          margin-right: 15px
+          right: 15px
+          cursor: pointer
+          background-image: url("../icons/fleche-deroulante.svg")
+          @include BgCover
+          width: 15px
+          height: 15px
+        .sub-menu
+          display: none
+        .sub-menu-display
+          background-color: $cPrinc
+          position: absolute
+          left: 0
+          padding: 25px 0
+          text-transform: uppercase
+          letter-spacing: 0.5px
+          height: $HeightMenu / 2
+          transform: translateY(149%)
+          width: 100vw
+          justify-content: center
+          li:nth-of-type(2)
+            border-right: solid 1px $cWhite
+            border-left: solid 1px $cWhite
+          .no-hover:hover
+            background-color: $cPrinc
+            box-shadow: unset
+          a
+            padding: 0px 20px!important
+
+

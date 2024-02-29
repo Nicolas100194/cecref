@@ -1,0 +1,39 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+
+.group-header-homepage
+  max-height: 65vh
+  min-height: 650px
+  display: flex
+  .wp-block-group__inner-container
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    .figure-img-header-homepage
+      display: flex
+      align-items: stretch
+      height: 100%
+      img
+        object-fit: cover
+        align-items: stretch
+    .group-column-card-header
+      max-width: 1000px
+      width: 100%
+      margin: auto
+      .card-header
+        .icon-card-header
+          text-align: center
+        .title-card-header
+          width: 100%
+          display: inline-block
+          text-align: center
+          color: $cWhite
+        &:nth-of-type(1)
+          background-color: $cPrinc
+        &:nth-of-type(2)
+          background-color: $cThird
+        &:nth-of-type(3)
+          background-color: $cFour
+
+
+
+
