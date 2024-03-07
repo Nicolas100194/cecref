@@ -2,13 +2,13 @@
 @import "../../../../cecref/assets/sass/utils/mixins"
 
 .btn-form-princ
-  background-color: $cPrinc
-  height: 70px!important
+  height: $HeightBtn!important
   border-radius: 5px
   a
     padding: 0px!important
 
 .btn-news-header
+  background-color: $cPrinc
   margin: 0 30px
   padding: 0 20px!important
   text-transform: uppercase
@@ -23,4 +23,22 @@
     width: 30px
     height: 30px
 
+.group-btn
+  .btn-form-princ
+    border: solid 2px $cPrinc
+    a
+      height: 100%
+      border-radius: unset
+      background-color: unset
+      color: $cPrinc
+      line-height: $HeightBtn
+      padding: 0 20px!important
+      background-color: $BgBtnPrinc
+      font-family: 'RobotoBold'
+      letter-spacing: 0.35px
+    .content-btn-news
+      display: block
 
+.group-btn-news
+  width: fit-content
+  margin-top: 20px

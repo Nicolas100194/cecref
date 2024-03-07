@@ -1,0 +1,51 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+
+.bg-team
+  background-color: $cBgPrimary
+.title-h2-team
+  //padding-bottom: 50px
+.group-team
+  padding-bottom: 50px
+  .wp-block-group__inner-container
+    max-width: 1650px
+    display: flex
+    position: relative
+    .container-content-team
+      background-color: $cWhite
+      width: 55%
+      padding: 50px 7% 50px 50px
+    .container-content-team
+    .img-team
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: end
+      width: 50%
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        width: 500px
+        height: 300px
+        background-color: $cPrinc
+        top: 0
+        right: -30px
+        z-index: 0
+      img
+        width: 100%
+        z-index: 1
+
+      figcaption
+        background-color: $cPrinc
+        width: 90%
+        padding: 20px
+        margin: unset
+        color: $cWhite
+
+
+
+

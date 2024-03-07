@@ -1,3 +1,5 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+
 *
   padding: 0
   margin: 0
@@ -6,3 +8,86 @@
   box-sizing: border-box
   scroll-behavior: smooth
   font-family: 'RobotoRegular'
+
+.p, .p-italic
+  color: $cText
+  font-size: 18px
+  letter-spacing: 0.25px
+  line-height: 30px
+.p
+  font-family: 'RobotoRegular'
+
+.p-italic
+  font-family: 'RobotoBoldItalic'
+
+.row-primary
+  .container-section
+    max-width: 1650px
+    margin: auto
+    .wp-block-group__inner-container
+      display: flex
+      .group-content-row-50
+        flex-basis: 50%
+        display: flex
+        align-items: center
+      .group-img-row-50
+        flex-basis: 50%
+        .wp-block-group__inner-container
+          height: 100%
+          .img-left, .img-right
+            img
+              display: block
+              object-fit: cover
+              height: 100%
+              width: 80%
+          .img-left
+            img
+              margin-right: auto
+          .img-right
+            img
+              margin-left: auto
+
+.section-info-primary
+  .container-section
+    max-width: 1650px
+    margin: auto
+    .wp-block-group__inner-container
+      display: flex
+      position: relative
+      .group-content-info-primary
+        background-color: $cWhite
+        display: flex
+        z-index: 2
+        width: 65%
+        padding: 50px
+        .wp-block-group__inner-container
+          align-items: center
+          .inner-bloc-content-info-primary
+            justify-content: center
+            height: 90%
+            flex-wrap: nowrap
+            .text-with-color-emb
+            .intro-content-therapies
+              margin-top: 25px
+            .group-btn-intro-therapies
+              margin-top: 25px
+      .group-img-info-primary
+        height: 120%
+        width: 40%
+        right: 0
+        bottom: 0
+        top: -10%
+        position: absolute
+        .wp-block-group__inner-container
+          height: 100%
+          figure
+            width: 100%
+            img
+              height: 100%
+              width: 100%
+              object-fit: cover
+
+
+
+
+

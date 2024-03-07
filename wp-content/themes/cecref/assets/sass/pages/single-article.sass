@@ -1,0 +1,23 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.container-single-article
+  max-width: 1650px
+  margin: 100px auto
+  box-shadow: 0px 3px 45px $cShadowNews
+  padding: 50px
+  .info-date-article
+    @include Date
+  .title-single-article
+    @include TitleNews
+    margin-top: 10px
+  p
+    color: $cText
+    font-size: 18px
+    letter-spacing: 0.25px
+    line-height: 30px
+    font-family: 'RobotoRegular'
+  figure
+    padding-top: 50px
+    display: flex
+    justify-content: center

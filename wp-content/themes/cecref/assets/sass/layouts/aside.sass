@@ -1,0 +1,60 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+
+.aside
+  gap: 0
+  margin-top: 100px
+  align-items: stretch!important
+  .group-left, .group-right
+    .wp-block-group__inner-container
+      width: unset
+      max-width: 775px
+  .group-left
+    width: 50%
+    display: flex
+    flex-direction: row-reverse
+    background-color: $cFour
+    padding: 50px
+    color: $cWhite
+    .wp-block-group__inner-container
+      //width: 50%
+      display: flex
+      flex-direction: column
+      margin: unset!important
+      .title-group-left
+        text-transform: uppercase
+        font-size: 48px
+        font-family: 'RobotoBold'
+        text-align: center
+      .img-group-left
+        width: 80%
+        margin: auto
+  .group-right
+    width: 50%
+    gap: unset
+    flex-wrap: nowrap
+    .group-top-right, .group-bottom-right
+      width: 100%
+      height: 100%
+      padding: 50px
+      .wp-block-group__inner-container
+        margin: unset!important
+        strong
+          font-family: 'RobotoBold'
+    .group-top-right
+      background-color: $cBgFourVariant
+    .group-bottom-right
+      background-color: $cBgPrinc
+      .title-bottom-right
+        font-size: 28px
+        font-family: 'RobotoBold'
+        margin-bottom: 20px
+      .p
+        color: $cPrinc
+      ul
+        padding-left: 15px
+        li
+          font-family: 'RobotoBold'
+          line-height: 40px
+          list-style-type: disc
+
+
