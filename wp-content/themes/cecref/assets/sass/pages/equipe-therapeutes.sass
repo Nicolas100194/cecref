@@ -7,14 +7,15 @@
 .group-team
   padding-bottom: 50px
   .wp-block-group__inner-container
-    max-width: 1650px
+    max-width: 1780px
     display: flex
     position: relative
     .container-content-team
       background-color: $cWhite
       width: 55%
       padding: 50px 7% 50px 50px
-    .container-content-team
+      .text-with-color-emb
+        margin-bottom: 20px
     .img-team
       position: absolute
       right: 0
@@ -29,22 +30,93 @@
         content: ''
         display: block
         position: absolute
-        width: 500px
-        height: 300px
-        background-color: $cPrinc
-        top: 0
-        right: -30px
+        width: 805px
+        height: 412px
+        background-image: url("../img/key-blue.png")
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        top: -176px
+        right: -206px
         z-index: 0
       img
         width: 100%
         z-index: 1
-
       figcaption
         background-color: $cPrinc
         width: 90%
         padding: 20px
         margin: unset
         color: $cWhite
+
+.container-gallery, .container-gallery-50
+  padding-top: 100px
+  .inner-container-gallery, .inner-container-gallery-50
+    max-width: 1650px
+    margin: auto
+    position: relative
+    .first-group-gallery-team
+      padding-bottom: 35px
+    .group-gallery-team
+      .wp-block-group__inner-container
+        max-width: 1650px
+        margin: auto
+        display: flex
+        //position: relative
+        justify-content: flex-end
+        .group-left-gallery
+          top: 0
+          left: 0
+          bottom: 0
+          //margin-right: 10px
+        .group-right-gallery
+          //margin-left: 10px
+        .group-content-pink
+          background-color: $cBgPrinc2
+          color: $cText
+        .group-content-blue
+          background-color: $cBgFive
+        .group-img-large
+          width: 49%
+          position: absolute
+          .wp-block-group__inner-container
+            height: 100%
+            figure, img
+              width: 100%
+              height: 100%
+              img
+                object-fit: cover
+        .group-content-w-img
+          align-items: center
+          figure
+            width: 70%
+            img
+              width: 100%
+          .p
+            text-align: center
+        .group-content-gallery
+          width: 49%
+          padding: 50px
+          height: fit-content
+          .wp-block-group__inner-container
+            display: flex
+            flex-direction: column
+
+
+.container-gallery-50
+  padding-top: 35px
+  padding-bottom: 100px
+  .inner-container-gallery-50
+    .group-gallery-team
+      .wp-block-group__inner-container
+        height: 700px
+        justify-content: space-between
+        .group-content-gallery
+          height: 100%
+          flex-wrap: nowrap
+          .p
+            margin-top: 30px
+
 
 
 

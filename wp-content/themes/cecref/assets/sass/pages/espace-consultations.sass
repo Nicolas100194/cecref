@@ -1,0 +1,122 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+.section-banner
+  height: 500px
+  margin-bottom: 250px
+  .wp-block-group__inner-container, figure, img
+    height: 100%
+    img
+      object-fit: cover
+      object-position: 0px -250px
+  .section-inner-banner
+    transform: translateY(-50%)
+    padding: 0px
+    .wp-block-group__inner-container
+      background-color: $cWhite
+      padding: 50px
+      max-width: 1350px
+      .content-inner-banner
+        .txt-subtitle-pink
+          color: $cPrinc
+          font-family: 'RobotoMediumItalic'
+        .txt-content-banner
+          margin: auto
+
+.section-for-the-people, .section-for-the-couple
+  .title-for-the-people, .title-for-couple
+    &:before
+      @include BgContain
+  .title-for-the-people
+    &:before
+      background-image: url("../icons/icon-title-for-the-people.png")
+  .title-for-couple
+    &:before
+      background-image: url("../icons/couple.png")
+
+
+
+.row-example
+  justify-content: center
+  margin-bottom: 150px
+  .container-inner-row-example
+    max-width: 1650px
+    align-items: stretch
+    .col-example
+      background-color: $cBgFive2
+      color: $cFive
+      justify-content: space-between
+      .group-content-col-example
+        padding: 25px
+        .title-example
+          font-size: 38px
+          font-family: 'RobotoBoldItalic'
+        .txt-example
+          color: $cFive
+          font-family: 'RobotoItalic'
+      figure
+    .col-symptoms
+      background-color: $cBgFour2
+      .col-33-txt
+        color: $cFour
+    .col-solutions
+      background-color: $cBgPrinc3
+      .col-33-txt
+        color: $cPrinc
+    .col-symptoms, .col-solutions
+      padding: 25px
+    .col-33
+      width: 33%
+      flex-wrap: nowrap
+      //justify-content: center
+      align-items: center
+      .col-33-img
+        width: 80%
+        height: 35%
+        img
+          height: 100%
+          object-fit: contain
+      .col-33-txt
+        height: 15%
+        font-size: 30px
+        display: flex
+        align-items: center
+        font-family: 'RobotoBoldItalic'
+        text-align: center
+      .col-33-tab, .col-33-tab-one-column
+        width: 100%
+        height: 45%
+        table
+          border-collapse: separate
+          border-spacing: 5px
+          tbody
+            tr
+              td
+                width: 50%
+                border: none
+                color: $cWhite
+                text-align: center
+                text-transform: uppercase
+                padding: 15px
+      .col-33-tab
+        td
+          background-color: $cFour
+      .col-33-tab-one-column
+        td
+          background-color: $cPrinc
+
+.group-pink-cover
+  background-color: $cPrinc
+  max-width: 1650px
+  margin: 0 auto 100px auto
+  padding: 50px
+  color: $cWhite
+  text-align: center
+  .img-group-pink-cover, .title-group-pink-cover, .txt-group-pink-cover
+    margin: auto
+  .title-group-pink-cover
+    font-size: 24px
+    font-family: 'RobotoBold'
+    padding: 25px 0
+  .txt-group-pink-cover
+    color: $cWhite
+    max-width: 800px
