@@ -23,6 +23,18 @@
     width: 30px
     height: 30px
 
+//btn news header version mobile
+.menu-mobile
+  .btn-news-header
+    margin-top: 30px
+    a
+      display: flex
+      height: 100%
+      justify-content: center
+      align-items: center
+      &:before
+        display: block
+
 .group-btn
   .btn-form-princ
     border: solid 2px $cPrinc
@@ -42,3 +54,19 @@
 .group-btn-news
   width: fit-content
   margin-top: 20px
+
+.btn-menu-mobile
+  display: none
+  position: relative
+  width: 70px
+  background-color: $cPrinc
+  .link-btn-form-princ
+    cursor: pointer
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 10px
+    right: 10px
+    background-image: url("../icons/icon-menu-mobile.png")
+    @include BgContain
+

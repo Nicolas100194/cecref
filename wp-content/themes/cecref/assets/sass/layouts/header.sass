@@ -1,5 +1,5 @@
 @import "../../../../cecref/assets/sass/utils/variables"
-
+@import "../../../../cecref/assets/sass/utils/mixins"
 header
   height: $HeightMenu
   font-size: 18px
@@ -7,10 +7,23 @@ header
   background-color: $cSecond
   display: flex
   justify-content: space-between
-  .logo-header-desktop
+  .bloc-logo-desktop
+    width: 450px
+    position: relative
+    background-color: $cSix
+    padding: 10px
     .logo-default
-      display: block
-      height: 100%
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+      width: 100%
+      object-fit: cover
+    .link-logo-header
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
   .menu-menu-principal-container
     ul
       display: flex
@@ -58,6 +71,7 @@ header
           transform: translateY(149%)
           width: 100vw
           justify-content: center
+          z-index: 99
           li:nth-of-type(2)
             border-right: solid 1px $cWhite
             border-left: solid 1px $cWhite
@@ -67,4 +81,125 @@ header
           a
             padding: 0px 20px!important
 
+  .menu-mobile
+    //display: none
+    width: $WidthMenuMobile
+    position: absolute
+    bottom: 0
+    top: 0
+    right: 0
+    background-color: $cSecond
+    transform: translateX($WidthMenuMobile)
+    li
+      a
+        color: $cWhite!important
+        text-decoration: unset
+    li
+      margin-left: 30px
+      line-height: 70px
+      .no-hover
+        border-bottom: unset
+    .menu-item-has-children
+      display: flex
+      align-items: center
+      &:before
+        content: ''
+        background-image: url("../icons/fleche-deroulante.svg")
+        @include BgCover
+        width: 15px
+        height: 15px
+        display: inline-block
+        margin-right: 15px
+      .sub-menu
+        display: none
+    .menu-reveal-mobile
+      flex-direction: column
+      align-items: baseline
+      &:before
+        display: none
+      a
+        &:before
+          content: ''
+          background-image: url("../icons/fleche-deroulante.svg")
+          @include BgCover
+          transform: rotate(180deg)
+          height: 15px
+          width: 15px
+          display: inline-block
+          margin-right: 15px
+      .sub-menu-display
+        position: relative
+        height: auto
+        li
+          line-height: 30px
+
+  .menu-mobile-display
+    display: block
+
+
+
+
+
+@media (max-width: 1630px)
+  header
+    .bloc-logo-desktop
+      width: 380px
+    .menu-menu-principal-container
+      ul
+        li, .menu-item-has-children
+          a
+            padding: 0 20px
+        .btn-news-header
+          margin: 0 20px
+
+@media (max-width: 1475px)
+  header
+    .menu-menu-principal-container
+      ul
+        li, .menu-item-has-children
+          a
+            padding: 0 15px
+        .btn-news-header
+          margin: 0 15px
+
+@media (max-width: 1430px)
+  header
+    .bloc-logo-desktop
+      width: 310px
+
+@media (max-width: 1366px)
+  header
+    .menu-menu-principal-container
+      ul
+        li, .menu-item-has-children
+          a
+            padding: 0 10px
+        .btn-news-header
+          margin: 0 10px
+
+//----MENU CHANGE
+
+@media (max-width: 1320px)
+  header
+    padding-right: 20px
+    .bloc-logo-desktop
+      width: 450px
+    .btn-menu-mobile
+      margin-left: 20px
+      display: block
+      top: 50%
+      transform: translateY(-50%)
+    .menu-menu-principal-container
+      display: none
+
+
+@media (max-width: 781px)
+  header
+    .bloc-logo-desktop
+      width: 65%
+
+@media (max-width: 580px)
+  header
+    .bloc-logo-desktop
+      width: 75%
 

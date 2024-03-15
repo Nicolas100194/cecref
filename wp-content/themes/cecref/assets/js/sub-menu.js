@@ -4,9 +4,10 @@ let lastEltClick = null
 function DisplaySubmenu(menuCurrent){
     if(menuCurrent.childNodes[2].className === "sub-menu"){
         menuCurrent.childNodes[2].className = "sub-menu-display"
+        menuCurrent.classList.toggle('menu-reveal-mobile')
     } else if (menuCurrent.childNodes[2].className === "sub-menu-display"){
         menuCurrent.childNodes[2].className = "sub-menu"
-
+        menuCurrent.classList.toggle('menu-reveal-mobile')
     }
 }
 
@@ -14,6 +15,7 @@ function VerifyDisplay(){
     Array.from(menuHasChildren).forEach(menu =>{
         if(menu.childNodes[2].className === "sub-menu-display"){
             menu.childNodes[2].className = "sub-menu"
+            menu.classList.remove('menu-reveal-mobile')
             RemoveClassActive(menu)
         }
     })

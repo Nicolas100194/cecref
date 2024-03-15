@@ -2,24 +2,26 @@
 
 .group-header-homepage
   max-height: 65vh
-  min-height: 650px
+  min-height: 350px
   display: flex
   .wp-block-group__inner-container
     display: flex
     flex-direction: column
-    align-items: stretch
+    position: relative
     .figure-img-header-homepage
       display: flex
-      align-items: stretch
       height: 100%
       img
         object-fit: cover
-        align-items: stretch
     .group-column-card-header
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translate(-50%, 50%)
       max-width: 1000px
       width: 100%
       margin: auto
-      transform: translateY(-50%)
+      gap: unset
       .card-header
         display: flex
         flex-direction: column
@@ -42,26 +44,36 @@
           background-color: $cPrinc
         &:nth-of-type(2)
           background-color: $cThird
+          margin: 0 15px
         &:nth-of-type(3)
           background-color: $cFour
 
+
 .section-primary-home
-  padding-top: 300px
-  padding-bottom: 200px
+  padding-top: 300px!important
+  padding-bottom: 200px!important
   background-color: $cBgPrimary
 
-
+.section-title-palo-alto
+  .subtitle-palo-alto
+    font-weight: 600
 
 
 .section-palo-alto
   padding-bottom: 75px
+  @include PaddingDesktop
   .container-section
     .wp-block-group__inner-container
+      .group-img-palo-alto
+        .img-palo-alto
+          img
+            width: 95%!important
+            object-fit: contain!important
       .group-content-palo-alto
         .text-with-color-emb
           margin-bottom: 15px
         .row-img-palo-alto
-          height: 300px
+          height: 250px
           margin: 50px 0
           figure, img
             height: 100%
@@ -69,6 +81,7 @@
               object-fit: cover
 
 .group-btn-center
+  margin-bottom: 100px
   .group-btn-therapeutes
     .btn-form-princ
       margin: auto
@@ -76,8 +89,7 @@
 
 
 .group-notions
-  transform: translateY(-70px)
-  max-height: 800px
+
   .wp-block-group__inner-container
     display: flex
     color: $cWhite
@@ -86,20 +98,12 @@
       width: 33%
       flex-wrap: nowrap
       background-color: $cFour
+      justify-content: space-between
       .group-loyautes
-        height: 65%
+        height: 50%!important
         justify-content: space-between
-        max-width: 600px
-        max-height: 480px
-        margin: auto
-        .h2-relative
-          position: relative
-          top: unset
-
-        .p-relative
-          padding-top: 0!important
       .group-img-loyautes
-        height: 35%
+        height: 40%
         figure, img
           height: 100%
           img
@@ -107,12 +111,13 @@
     .group-three-notions
       width: 67%
       gap: unset
-      .group-identify, .row-notions
+      .group-identify, .group-bo-de
         height: 50%
       .group-icon-notions
         background-color: $cBgPink
         height: 100%
         justify-content: center
+        padding: 50px
         figure
           height: 70%
           img
@@ -121,6 +126,7 @@
       .group-identify
         background-color: $cFive
         width: 100%
+        gap: unset
         .group-membership
           width: 70%
         .group-icon-notions
@@ -142,7 +148,6 @@
         width: 100%
         flex-wrap: nowrap
         padding: 50px
-
         position: relative
         h2
           font-size: 40px
@@ -154,8 +159,322 @@
           top: 50px
         .p
           color: $cWhite
-          padding-top: 150px
-          max-width: 700px
+          padding-top: 120px
+          max-width: 550px
 
-.section-family
-  padding: 50px 0
+.group-img-family
+  position: relative
+  background-color: $cBgPrimary
+  z-index: -1
+  .img-family
+    margin: auto
+    max-width: 1650px
+    height: 450px
+    z-index: 2
+    position: relative
+    max-height: 450px
+    img
+      height: 100%
+      object-fit: cover
+      z-index: 99
+      object-position: 0px 25%
+.group-img-family:after
+  content: ''
+  position: absolute
+  top: 50%
+  z-index: 1
+  background-color: $cPrinc
+  width: 100vw
+  height: 350px
+  display: block
+
+.group-wrap-img-family
+  background-color: $cPrinc
+  .title-wrap-img-family
+    padding: 70px 0 35px 0
+    color: $cWhite
+    font-size: 34px
+    text-transform: uppercase
+    font-family: 'RobotoBold'
+    text-align: center
+  .row-wrap-img-family
+    background-color: $cPrinc
+    justify-content: center
+    padding-bottom: 70px
+    .icon-img-family
+      height: 85px
+      width: 85px
+      margin: 0 17px
+      img
+        height: 100%
+        object-fit: contain
+
+.group-row-content-family
+  padding-top: 100px
+  padding-bottom: 70px
+  background-color: $cBgPrimary
+  @include PaddingDesktop
+  justify-content: center
+  .inner-container-content-family
+    max-width: 1650px
+    .wp-block-group__inner-container
+      display: flex
+      .col-content-family
+        flex-basis: 50%
+        .title-content-family
+          margin-bottom: 20px
+      .col-content-family:first-of-type
+        margin-right: 25px
+      .col-content-family:nth-of-type(2)
+          margin-left: 25px
+
+.group-row-content-family:first-of-type
+  padding-top: 100px
+
+.row-bottom-content-family
+  padding-bottom: 100px
+
+.group-img-second-family
+  background-color: $cBgPrimary
+  @include PaddingDesktop
+  justify-content: center
+  .inner-container-img-second-family
+    max-width: 1650px
+    margin: auto
+    .wp-block-group__inner-container
+      position: relative
+      .img-second-family
+        width: 100%
+        height: 450px
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+      .group-btn-i-s
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translateX(-50%)
+        .btn-variant
+          background-color: $cSecond
+          border: unset
+          a
+            color: $cWhite
+            padding: 0 50px!important
+
+
+@media (max-width: 1550px)
+  .group-notions
+    .wp-block-group__inner-container
+      max-height: 1500px
+
+@media (max-width: 1496px)
+  .group-notions
+    .wp-block-group__inner-container
+      .group-one-notion
+        .group-loyautes
+          height: 55%!important
+        .group-img-loyautes
+          height: 35%
+
+@media (max-width: 1480px)
+  .section-palo-alto
+    .container-section
+      .wp-block-group__inner-container
+        .group-img-palo-alto
+          flex-basis: 55%
+        .group-content-palo-alto
+          flex-basis: 45%
+          .row-img-palo-alto
+            height: 200px
+            margin: 25px 0
+
+@media (max-width: 1366px)
+  .group-notions
+    .wp-block-group__inner-container
+      .group-three-notions
+        .group-identify
+          height: 45%
+        .group-bo-de
+          height: 55%
+      .group-one-notion, .group-three-notions
+        .content-notions
+          h2
+            position: unset
+            margin-bottom: 20px
+          .p
+            padding-top: 0px
+
+
+@media (max-width: 1240px)
+  .section-palo-alto
+    .container-section
+      .wp-block-group__inner-container
+        .group-content-palo-alto
+          .row-img-palo-alto
+            height: 160px
+
+@media (max-width: 1200px)
+  .group-notions
+    .wp-block-group__inner-container
+      .group-one-notion, .group-three-notions
+        .content-notions
+          padding: 30px
+          h2
+            font-size: 30px
+            line-height: 35px
+      .group-one-notion
+        .group-img-loyautes
+          height: 30%
+      .group-three-notions
+        .group-identify
+          .group-membership
+            width: 90%
+          .group-icon-notions
+            padding: 25px
+        .group-bo-de
+          .group-borders, .group-dependency
+            width: 50%
+
+
+@media (max-width: 1180px)
+  .section-title-palo-alto
+    padding-bottom: 50px
+    hr
+      display: none
+    .subtitle-palo-alto
+      margin-top: 35px
+  .section-palo-alto
+    padding-bottom: 0px
+    .container-section
+      .wp-block-group__inner-container
+        flex-direction: column-reverse
+        .group-content-palo-alto
+          .row-img-palo-alto
+            height: 300px
+        .group-img-palo-alto
+          .img-palo-alto
+            img
+              max-width: 700px
+              margin: auto!important
+
+
+@media (max-width: 1080px)
+  .group-header-homepage
+    .wp-block-group__inner-container
+      .group-column-card-header
+        width: calc(100vw - 30px)
+        .card-header
+          padding: 30px
+
+@media (max-width: 1060px)
+  .group-notions
+    .wp-block-group__inner-container
+      max-height: unset
+      flex-direction: column
+      .group-one-notion, .group-three-notions
+        width: 100%
+      .group-one-notion
+        .content-notions
+          align-items: center
+          h2
+          .p
+            text-align: unset
+        .group-img-loyautes > figure > img
+          max-height: 400px
+      .group-three-notions
+        .group-identify, .group-bo-de
+          height: 450px
+          .group-membership, .group-icon-notions, .group-borders, .group-dependency
+            flex-basis: 50%
+            padding: 50px
+            .p
+              text-align: unset
+
+
+@media (max-width: 1000px)
+  .section-primary-home
+    padding: 200px 0 0 0!important
+  .section-palo-alto
+    @include PaddingMobile
+  .group-btn-center
+    margin-bottom: 25px
+  .group-row-content-family
+    @include PaddingMobile
+    padding-top: 50px
+    padding-bottom: 50px
+    .inner-container-content-family
+      .wp-block-group__inner-container
+        flex-direction: column
+        .col-content-family
+          margin: unset!important
+          &:nth-of-type(2)
+            margin-top: 50px!important
+  .group-img-second-family
+    @include PaddingMobile
+
+
+
+@media (max-width: 860px)
+  .group-header-homepage
+    .wp-block-group__inner-container
+      .group-column-card-header
+        .card-header
+          padding: 30px 15px
+  .group-btn-center
+    //padding-bottom: 50px
+
+@media (max-width: 800px)
+  .group-notions
+    .wp-block-group__inner-container
+      .group-three-notions
+        .group-identify, .group-bo-de
+          height: auto
+          flex-direction: column
+          .group-membership, .group-icon-notions, .group-borders, .group-dependency
+            width: 100%
+            align-items: center
+            padding: 50px 15px
+            h2
+              text-align: center
+            .p
+              text-align: center
+          .group-icon-notions > figure > img
+            max-height: 200px
+      .group-one-notion
+        .content-notions
+          padding: 50px 15px
+          h2
+            text-align: center
+          .p
+            text-align: center
+
+
+@media (max-width: 781px)
+  .group-header-homepage
+    .wp-block-group__inner-container
+      .group-column-card-header
+        transform: translate(-50%, 85%)
+        .card-header:nth-of-type(2)
+          margin: 15px 0px
+  .section-primary-home
+    padding: 550px 0 0 0!important
+  .group-btn-center
+    margin-bottom: 50px
+  .group-img-family
+    .img-family
+      height: unset
+      max-height: unset
+  .group-title-family
+    padding: 50px 0
+
+@media (max-width: 550px)
+  .group-wrap-img-family
+    .title-wrap-img-family
+      padding: 35px 15px
+      font-size: 30px
+    .row-wrap-img-family
+      padding-bottom: 35px
+      .icon-img-family
+        height: 50px
+        width: 50px

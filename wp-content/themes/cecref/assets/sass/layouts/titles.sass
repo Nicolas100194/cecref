@@ -3,13 +3,16 @@
 
 .text-with-color-emb
   display: flex
+  position: relative
   align-items: center
   text-transform: uppercase
   color: $cPrinc
   font-family: 'RobotoMedium'
   letter-spacing: 0.85px
   font-size: 25px
+  padding-left: 10px
   &:before, &:after
+    position: absolute
     content: ''
     display: inline-block
     background-color: $cPrinc
@@ -18,10 +21,66 @@
     width: 5px
     height: 5px
     margin-right: 10px
+    left: 0px
   &:after
     margin-left: 10px
     height: 2px
-    width: 80px
+    width: 40px
+    right: -50px
+
+@media (max-width: 1180px)
+  .text-with-color-emb
+    padding-left: 0px
+    margin: 0 auto 15px auto!important
+    &:before
+      border-radius: unset
+      width: 40px
+      height: 2px
+      left: -50px
+  .group-row-content-family
+    .text-with-color-emb
+      margin: unset!important
+      &:before
+        display: none
+
+
+@media (max-width: 1000px)
+  .text-with-color-emb
+    margin: 0 auto 15px auto!important
+    &:before
+      border-radius: unset
+      width: 40px
+      height: 2px
+  .group-row-content-family
+    .text-with-color-emb
+      margin: 0 auto 15px auto!important
+      &:before
+        display: block
+
+
+
+@media (max-width: 650px)
+  .text-with-color-emb
+    font-size: 21px
+
+
+@media (max-width: 650px)
+  .text-with-color-emb
+    &:before, &:after
+      width: 25px!important
+    &:before
+      left: -35px!important
+    &:after
+      right: -35px!important
+
+@media (max-width: 350px)
+  .text-with-color-emb
+    &:before, &:after
+      display: none!important
+
+
+
+
 
 .title-h1
   text-transform: uppercase
@@ -31,11 +90,21 @@
   letter-spacing: 0.5px
   line-height: 45px
 
+@media (max-width: 1000px)
+  .title-h1
+    text-align: center
+    margin-bottom: 10px!important
+
+@media (max-width: 520px)
+  .title-h1
+    font-size: 28px
+    line-height: 35px
+
 .title-excerpt-news
   @include TitleNews
 
 .group-title-h2
-  padding: 75px 0
+  padding: 35px 35px 100px 35px
   .container-center
     margin: auto
   .wp-block-group__inner-container
@@ -65,18 +134,67 @@
       font-size: 18px
       letter-spacing: 0.25px
 
+@media (max-width: 1000px)
+  .group-title-h2
+    @include PaddingMobile
+    .wp-block-group__inner-container
+      .title-h2
+        font-size: 38px
+
+@media (max-width: 520px)
+  .group-title-h2
+    .wp-block-group__inner-container
+      .title-h2
+        font-size: 30px
+
+
 .section-title-with-emb
   .container-title-with-emb
+    width: 100%
+    max-width: 1800px
     margin: auto
-    max-width: 1900px
-    padding: 0 50px
+    position: relative
+    padding: 100px 50px 50px 50px
     .txt-strong
       font-size: 48px
       font-family: 'RobotoBoldItalic'
       color: $cFive
+    .img-key
+      position: absolute
+      z-index: -1
+      right: 0
+
+@media (max-width: 1000px)
+  .section-title-with-emb
+    @include PaddingMobile
+    .container-title-with-emb
+      padding: 50px 0
+      text-align: center
+      .img-key
+        left: 0
+        transform: translateY(100px)
+
+@media (max-width: 580px)
+  .section-title-with-emb
+    .container-title-with-emb
+      .txt-strong
+        font-size: 40px
+
+
+
+
+
+@media (max-width: 786px)
+  .section-title-with-emb
+    .container-title-with-emb
+      .txt-strong
+        //flex-basis: 70%
+      .img-key
+
 
 .group-title-family
-  padding: 0px
+  background-color: $cBgPrimary
+  padding: 100px 0px
 
 .group-title-news
   padding-bottom: 0px!important

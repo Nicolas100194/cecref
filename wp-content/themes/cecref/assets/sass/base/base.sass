@@ -9,16 +9,35 @@
   scroll-behavior: smooth
   font-family: 'RobotoRegular'
 
+body
+  position: relative
+  overflow-x: hidden
+
+.site-container
+  transition: 0.3s
+
 .p, .p-italic
   color: $cText
   font-size: 18px
   letter-spacing: 0.25px
   line-height: 30px
+@media (max-width: 1000px)
+  .p, .p-italic
+    text-align: justify
 .p
   font-family: 'RobotoRegular'
 
 .p-italic
   font-family: 'RobotoBoldItalic'
+
+.site-container
+  .section-wrap-primary
+    padding: 0 35px
+@media (max-width: 1080px)
+  .section-wrap-primary
+    padding: 0px
+
+
 
 .row-primary
   .container-section
@@ -64,11 +83,10 @@
           align-items: center
           .inner-bloc-content-info-primary
             justify-content: center
-            height: 90%
             flex-wrap: nowrap
             .text-with-color-emb
             .intro-content-therapies
-              margin-top: 25px
+              margin: 25px 0 10px 0
             .group-btn-intro-therapies
               margin-top: 25px
       .group-img-info-primary
@@ -86,6 +104,34 @@
               height: 100%
               width: 100%
               object-fit: cover
+
+
+@media (max-width: 1250px)
+  .section-info-primary
+    .container-section
+      .wp-block-group__inner-container
+        .group-content-info-primary
+          width: 75%
+        .group-img-info-primary
+          width: 48%
+
+
+@media (max-width: 1000px)
+  .site-container
+    .section-info-primary
+      .container-section
+        .wp-block-group__inner-container
+          flex-direction: column
+          .group-content-info-primary, .group-img-info-primary
+            width: 100%
+          .group-content-info-primary
+            padding: 50px 15px 25px 15px
+            .wp-block-group__inner-container
+              .inner-bloc-content-info-primary
+                .group-btn-intro-therapies
+                  margin: 35px auto 15px auto
+          .group-img-info-primary
+            position: unset
 
 
 .row-img-content-50
@@ -114,7 +160,7 @@
             height: 100%
             object-fit: cover
 
-
-
-
-
+@media (max-width: 1320px)
+  .site-container-move
+    transform: translateX(-$WidthMenuMobile)
+    transition: 0.3s

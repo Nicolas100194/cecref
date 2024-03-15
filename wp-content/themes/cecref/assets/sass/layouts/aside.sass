@@ -1,60 +1,43 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 
-.aside
-  gap: 0
-  margin-top: 100px
-  align-items: stretch!important
-  .group-left, .group-right
-    .wp-block-group__inner-container
-      width: unset
-      max-width: 775px
-  .group-left
-    width: 50%
-    display: flex
-    flex-direction: row-reverse
-    background-color: $cFour
-    padding: 50px
-    color: $cWhite
-    .wp-block-group__inner-container
-      //width: 50%
-      display: flex
-      flex-direction: column
-      margin: unset!important
-      .title-group-left
-        text-transform: uppercase
-        font-size: 48px
-        font-family: 'RobotoBold'
-        text-align: center
-      .img-group-left
-        width: 80%
-        margin: auto
-  .group-right
-    width: 50%
-    gap: unset
-    flex-wrap: nowrap
-    .group-top-right, .group-bottom-right
-      width: 100%
-      height: 100%
-      padding: 50px
-      .wp-block-group__inner-container
-        margin: unset!important
-        strong
+aside
+  background-color: $cSecond
+  color: $cWhite
+  padding-top: 50px
+  padding-bottom: 50px
+  @include PaddingDesktop
+  .group-inner-aside
+    margin: auto
+    max-width: 1650px
+    .row-inner-aside
+      .column-inner-aside
+        flex-basis: 60%
+        .title-col-aside
+          font-size: 30px
           font-family: 'RobotoBold'
-    .group-top-right
-      background-color: $cBgFourVariant
-    .group-bottom-right
-      background-color: $cBgPrinc
-      .title-bottom-right
-        font-size: 28px
-        font-family: 'RobotoBold'
-        margin-bottom: 20px
-      .p
-        color: $cPrinc
-      ul
-        padding-left: 15px
-        li
-          font-family: 'RobotoBold'
-          line-height: 40px
-          list-style-type: disc
+        .tab-aside
+          padding-top: 25px
+          table
+            transform: translateX(-5px)
+            border-collapse: separate
+            border-spacing: 5px
+            td
+              background-color: $cPrinc
+              border: none
+              padding: 30px 60px
+              font-family: 'RobotoBold'
+              font-size: 18px
+          figcaption
+            padding-top: 10px
+            font-size: 13px
+      .img-aside
+        flex-basis: 40%
+        height: 350px
+        img
+          height: 100%
+          object-fit: contain
+
+
+
 
 
