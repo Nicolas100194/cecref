@@ -3,9 +3,13 @@
 function theme_cecref_register_assets(){
     wp_deregister_script('jquery');
     wp_enqueue_style('themececref', get_stylesheet_directory_uri().'/assets/sass/main.css');
+    wp_enqueue_style('lefleat', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+    wp_enqueue_script('lefleat-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), null, true);
     wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
     wp_enqueue_script('menu-mobile.js', get_stylesheet_directory_uri().'/assets/js/menu-mobile.js', array(), null, true);
     wp_enqueue_script('sub-menu.js', get_stylesheet_directory_uri().'/assets/js/sub-menu.js', array(), null, true);
+    wp_enqueue_script('map.js', get_stylesheet_directory_uri().'/assets/js/map.js', array(), null, true);
+
 }
 
 function theme_cecref_supports(){
@@ -32,10 +36,7 @@ function remove_featured_image_dimensions($content) {
     return $content;
 }
 
-function remove_thumbnail_dimensions($html, $post_id, $post_image_id) {
-    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
-    return $html;
-}
+
 
 function custom_articles_shortcode() {
 
@@ -47,6 +48,7 @@ function custom_articles_shortcode() {
     ));
 
     if ($query->have_posts()): while ($query->have_posts()): $query->the_post();
+        $output .= '<section class="group-article">';
         $output .= '<article class="container-article">';
         // Affichage de l'image à la une
         if (has_post_thumbnail()) {
@@ -66,6 +68,7 @@ function custom_articles_shortcode() {
         $output .= '<div class="group-btn group-btn-news "><div class="btn-form-princ"><a class="content-btn-news" href="' . get_permalink() . '">Lire l\'article complet</a></div></div></div>';
 
         $output .= '</article>';
+        $output .= '</section>';
     endwhile; endif;
 
     wp_reset_postdata();
@@ -89,7 +92,7 @@ add_action('after_setup_theme', 'add_custom_image_size');
 add_filter('admin_post_thumbnail_html', 'remove_featured_image_dimensions');
 add_filter('upload_mimes', 'wpc_mime_types');
 add_filter('excerpt_length', 'custom_excerpt_length');
-add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3);
+
 add_filter('excerpt_more', 'custom_excerpt_more');
 register_nav_menu('header', 'menu principal');
 register_nav_menu('header-mobile', 'menu mobile');

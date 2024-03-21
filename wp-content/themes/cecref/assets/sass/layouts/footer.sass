@@ -3,7 +3,7 @@
 footer
   background-color: $cSecond
   color: $cWhite
-  padding: 50px 35px 25px 35px
+  padding: 0px 35px 25px 35px
   .container-footer
     max-width: 1650px
     margin: auto
@@ -12,21 +12,45 @@ footer
       width: 100%
       align-items: stretch
       figure
-        width: 350px
+        flex-basis: 25%
+        background-color: $cBgPink
+        border-radius: 5px
+        img
+          height: 100%
+          object-fit: contain
       .col-info-footer
         h3
           font-size: 20px
           text-transform: uppercase
-          font-family: 'RobotoBold'
+
           letter-spacing: 1px
+
         ul
-          line-height: 30px
+          .li-with-icon
+            display: flex
+            align-items: center
+            &:before
+              content: ''
+              display: inline-block
+              width: 25px
+              height: 25px
+              margin-right: 10px
+              @include BgContain
+            &:first-of-type
+              &:before
+                background-image: url("../icons/icon-phone.png")
+            &:nth-of-type(2)
+              &:before
+                background-image: url("../icons/icon-locale.png")
           li
             color: $cWhite
+            padding: 7.5px 0
             a
               color: $cWhite
       .row-container-menu
         align-items: stretch
+        flex-basis: 75%
+        justify-content: end
         .col-info-footer:nth-of-type(2)
           margin: 0 50px
     .separator-footer
@@ -35,38 +59,46 @@ footer
       height: 1px
       width: 100%
       margin: 30px 0
-    .row-bottom-footer
-      .p-bottom-footer
-        text-transform: uppercase
-        font-size: 20px
-        font-family: 'RobotoMedium'
-        margin-right: 25px
-      .btn-footer
-        background-color: $cPrinc
-        a
-          color: $cWhite
-          text-transform: uppercase
 
-@media (max-width: 1280px)
+@media (max-width: 1230px)
+  footer
+    .container-footer
+      .row-top-footer
+        .row-container-menu
+          .col-info-footer:nth-of-type(2)
+            margin: 0 30px
+
+@media (max-width: 1180px)
   footer
     .container-footer
       .row-top-footer
         flex-direction: column
         figure
-          margin-bottom: 35px
+          max-width: 500px
+          margin: auto
+          height: 130px
+          flex-basis: unset
         .row-container-menu
+          margin-top: 35px
+          justify-content: center
 
-          align-items: center
-          .col-info-footer
+@media (max-width: 1000px)
+  footer
+    @include PaddingMobile
 
-            h3
-              font-size: 25px
-          .col-info-footer:nth-of-type(2)
-            //margin: 35px
-
-@media (max-height: 880px)
+@media (max-width: 900px)
   footer
     .container-footer
       .row-top-footer
         .row-container-menu
           flex-direction: column
+          align-items: center
+          .col-info-footer
+            h3, ul
+              margin: auto
+              text-align: center
+              .li-with-icon
+                text-align: left
+            &:nth-of-type(2)
+              margin: 35px 0
+

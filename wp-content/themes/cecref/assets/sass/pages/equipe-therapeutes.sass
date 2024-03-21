@@ -1,62 +1,47 @@
 @import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
 
-.bg-team
-  background-color: $cBgPrimary
-.title-h2-team
-  //padding-bottom: 50px
-.group-team
-  padding-bottom: 50px
-  .wp-block-group__inner-container
-    max-width: 1780px
-    display: flex
-    position: relative
-    .container-content-team
-      background-color: $cWhite
-      width: 55%
-      padding: 50px 7% 50px 50px
-      .text-with-color-emb
-        margin-bottom: 20px
+.banner-team
+  margin-bottom: 200px!important
+  .section-inner-banner
+    .wp-block-group__inner-container
+      .content-inner-banner
+        .txt-content-banner
+          margin-top: 35px!important
+          font-family: 'RobotoBold'
+
+.row-team
+  @include PaddingDesktop
+  .inner-container-team
+    @include AdjustContent
+    justify-content: space-between
+    .col-left, .col-right
+      flex-basis: 50%
     .img-team
-      position: absolute
-      right: 0
-      top: 0
-      bottom: 0
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: end
-      width: 50%
-      &:before
-        content: ''
-        display: block
-        position: absolute
-        width: 805px
-        height: 412px
-        background-image: url("../img/key-blue.png")
-        background-position: center
-        background-size: contain
-        background-repeat: no-repeat
-        top: -176px
-        right: -206px
-        z-index: 0
       img
         width: 100%
-        z-index: 1
-      figcaption
-        background-color: $cPrinc
-        width: 90%
-        padding: 20px
-        margin: unset
-        color: $cWhite
+    .col-content-team
+      flex-basis: 45%!important
+      .text-with-color-emb
+      .p-content
+        margin-top: 20px
+      .p-content, ul
+        max-width: 75%
+
+.row-qualif
+  margin: 150px 0
+  .inner-container-team
+    .img-team
+      flex-basis: 45%
+
 
 .container-gallery, .container-gallery-50
-  padding-top: 100px
   .inner-container-gallery, .inner-container-gallery-50
     max-width: 1650px
     margin: auto
     position: relative
     .first-group-gallery-team
-      padding-bottom: 35px
+      //padding-bottom: 35px
     .group-gallery-team
       .wp-block-group__inner-container
         max-width: 1650px
@@ -77,7 +62,7 @@
         .group-content-blue
           background-color: $cBgFive
         .group-img-large
-          width: 49%
+          width: 50%
           position: absolute
           .wp-block-group__inner-container
             height: 100%
@@ -95,7 +80,7 @@
           .p
             text-align: center
         .group-content-gallery
-          width: 49%
+          width: 50%
           padding: 50px
           height: fit-content
           .wp-block-group__inner-container
@@ -104,8 +89,7 @@
 
 
 .container-gallery-50
-  padding-top: 35px
-  padding-bottom: 100px
+  //padding-bottom: 100px
   .inner-container-gallery-50
     .group-gallery-team
       .wp-block-group__inner-container
@@ -117,7 +101,102 @@
           .p
             margin-top: 30px
 
+@media (max-width: 1450px)
+  .row-team
+    .inner-container-team
+      .col-content-team
+        .p-content, ul
+          max-width: 90%
+
+@media (max-width: 1350px)
+  .row-team
+    .inner-container-team
+      .col-content-team
+        .p-content, ul
+          max-width: 100%
+
+@media (max-width: 1180px)
+  .banner-team
+    margin-bottom: 150px!important
+  .row-team
+    .inner-container-team
+      flex-direction: column
+      width: 100%
+      .img-team
+        margin-bottom: 90px
+        width: 100%
+        flex-basis: unset
+        img
+          height: 100%
+          object-fit: cover
+      .col-content-team
+        max-width: 850px
+        ul
+          margin: auto
+
+  .row-qualif
+    margin-top: 75px
+    .inner-container-team
+      flex-direction: column-reverse
+      .img-team
+        margin-bottom: 30px
+
+@media (max-width: 1050px)
+  .container-gallery
+    .inner-container-gallery
+      .group-gallery-team
+        .wp-block-group__inner-container
+          flex-direction: column
+          .group-img-large, .group-content-gallery
+            width: 100%
+          .group-img-large
+            position: relative
+            height: 850px
+            >.wp-block-group__inner-container, figure, img
+              height: 100%
+  .container-gallery-50
+    .inner-container-gallery-50
+      .group-gallery-team
+        .wp-block-group__inner-container
+          height: auto
+          flex-direction: column-reverse
+          .group-content-gallery
+            width: 100%
+            figure
+              width: 100%
+
+
+
+@media (max-width: 1000px)
+  .row-team
+    @include PaddingMobile
+    margin-bottom: 75px
+
+
+@media (max-width: 800px)
+  .container-gallery
+    .inner-container-gallery
+      .group-gallery-team
+        .wp-block-group__inner-container
+          .group-img-large
+            height: auto
+          .group-content-w-img
+            figure
+              width: 100%
 
 
 
 
+@media (max-width: 550px)
+  .container-gallery
+    .inner-container-gallery
+      .group-gallery-team
+        .wp-block-group__inner-container
+          .group-img-large
+            height: 450px
+  .container-gallery-50, .container-gallery
+    .inner-container-gallery-50, .inner-container-gallery
+      .group-gallery-team
+        .wp-block-group__inner-container
+          .group-content-gallery
+            @include PaddingMobile

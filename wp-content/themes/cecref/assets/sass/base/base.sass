@@ -1,5 +1,5 @@
 @import "../../../../cecref/assets/sass/utils/variables"
-
+@import "../../../../cecref/assets/sass/utils/mixins"
 *
   padding: 0
   margin: 0
@@ -37,7 +37,9 @@ body
   .section-wrap-primary
     padding: 0px
 
-
+figure
+  figcaption
+    color: $cPrinc
 
 .row-primary
   .container-section
@@ -132,11 +134,14 @@ body
                   margin: 35px auto 15px auto
           .group-img-info-primary
             position: unset
+            figure
+              height: 450px
 
 
 .row-img-content-50
   justify-content: center
   margin-bottom: 100px
+  @include PaddingDesktop
   .container-inner-row-img-content-50
     max-width: 1650px
     width: 100%
@@ -153,12 +158,28 @@ body
       .group-right-row-50, .group-left-row-50
         .img-h-300
           img
-            height: 300px!important
+            height: 300px
         .img-row-50
           height: 100%
           img
             height: 100%
             object-fit: cover
+
+@media (max-width: 1000px)
+  .row-img-content-50
+    @include PaddingMobile
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        flex-direction: column
+        .group-right-row-50, .group-left-row-50
+          margin: 0px
+          .wp-block-group__inner-container
+            figure, img
+              height: 100%
+            .img-h-300
+              img
+                height: 100%!important
+
 
 @media (max-width: 1320px)
   .site-container-move

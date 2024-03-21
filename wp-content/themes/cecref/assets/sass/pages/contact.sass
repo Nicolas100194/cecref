@@ -1,0 +1,72 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.title-form
+  margin-top: 50px
+
+.group-form
+  @include PaddingDesktop
+  .wp-block-group__inner-container
+    max-width: 1650px
+    width: 100%
+    form
+      max-width: 1000px
+      margin: auto
+      font-size: 18px
+      fieldset
+        display: flex
+        justify-content: space-between
+        border: none
+        p
+          flex-basis: 49%
+          label
+            color: $cPrinc
+          >label, span, input
+            width: 100%
+            display: inline-block
+          span
+            margin-top: 5px
+          input
+            height: 50px
+            border: solid 2px $cPrinc
+            border-radius: 5px
+            padding-left: 10px
+            color: $cPrinc
+            font-size: 18px
+        &:first-of-type, &:nth-of-type(2)
+          margin-bottom: 35px
+      .container-msg
+        flex-direction: column
+        .wpcf7-form-control-wrap
+          textarea
+            border: solid 2px $cPrinc
+            width: 100%
+            border-radius: 5px
+            margin-bottom: 35px
+            padding: 10px
+            color: $cPrinc
+        .wpcf7-submit
+          display: block
+          background-color: $cPrinc
+          color: $cWhite
+          width: 150px
+          padding-left: 0px
+          margin: auto
+          &:hover
+            cursor: pointer
+
+@media (max-width: 1000px)
+  .title-form
+    margin-top: 25px
+    padding-bottom: 50px
+
+@media (max-width: 800px)
+  .group-form
+    .wp-block-group__inner-container
+      form
+        fieldset
+          flex-direction: column
+          margin-bottom: 0px!important
+          p
+            margin-bottom: 20px
+

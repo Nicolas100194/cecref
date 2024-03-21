@@ -1,43 +1,52 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
 .section-banner
-  height: 500px
+  height: 60vh
   margin-bottom: 250px
   .wp-block-group__inner-container, figure, img
     height: 100%
-    img
-      object-fit: cover
-      object-position: 0px -250px
+    .img-banner
+      img
+        width: 100%
+        object-fit: cover
   .section-inner-banner
     transform: translateY(-50%)
-    padding: 0px
+
+    @include PaddingDesktop
     .wp-block-group__inner-container
       background-color: $cWhite
       padding: 50px
-      max-width: 1350px
+      max-width: 1150px
       .content-inner-banner
         .txt-subtitle-pink
           color: $cPrinc
           font-family: 'RobotoMediumItalic'
         .txt-content-banner
-          margin: auto
+          margin: 35px auto 0 auto
 
 .section-for-the-people, .section-for-the-couple
-  .title-for-the-people, .title-for-couple
-    &:before
-      @include BgContain
-  .title-for-the-people
-    &:before
-      background-image: url("../icons/icon-title-for-the-people.png")
-  .title-for-couple
-    &:before
-      background-image: url("../icons/couple.png")
+  .group-img-row-50
+    figure
+      img
+        height: 100%
+        object-fit: cover
+  .group-content-row-50
+    .title-for-the-people, .title-for-couple
+      &:before
+        @include BgContain
+    .title-for-the-people
+      &:before
+        background-image: url("../icons/icon-title-for-the-people.png")
+    .title-for-couple
+      &:before
+        background-image: url("../icons/couple.png")
 
 
 
 .row-example
   justify-content: center
   margin-bottom: 150px
+  //@include PaddingDesktop
   .container-inner-row-example
     max-width: 1650px
     align-items: stretch
@@ -63,18 +72,20 @@
       .col-33-txt
         color: $cPrinc
     .col-symptoms, .col-solutions
-      padding: 25px
+      padding: 2%
     .col-33
       width: 33%
       flex-wrap: nowrap
       //justify-content: center
       align-items: center
       .col-33-img
-        width: 80%
+        width: 100%
         height: 35%
         img
           height: 100%
           object-fit: contain
+          margin: auto
+          display: block
       .col-33-txt
         height: 15%
         font-size: 30px
@@ -84,7 +95,6 @@
         text-align: center
       .col-33-tab, .col-33-tab-one-column
         width: 100%
-        height: 45%
         table
           border-collapse: separate
           border-spacing: 5px
@@ -98,6 +108,7 @@
                 text-transform: uppercase
                 padding: 15px
       .col-33-tab
+        overflow: hidden
         td
           background-color: $cFour
       .col-33-tab-one-column
@@ -105,14 +116,20 @@
           background-color: $cPrinc
 
 .group-pink-cover
-  background-color: $cPrinc
-  max-width: 1650px
-  margin: 0 auto 100px auto
-  padding: 50px
   color: $cWhite
   text-align: center
+  margin-bottom: 50px
+  @include PaddingDesktop
+  .container-inner-pink
+    background-color: $cPrinc
+    max-width: 1650px
+    margin: auto
+    width: 100%
+    padding: 50px 0
   .img-group-pink-cover, .title-group-pink-cover, .txt-group-pink-cover
     margin: auto
+  .img-group-pink-cover
+    width: 80px
   .title-group-pink-cover
     font-size: 24px
     font-family: 'RobotoBold'
@@ -120,3 +137,122 @@
   .txt-group-pink-cover
     color: $cWhite
     max-width: 800px
+
+@media (max-width: 1100px)
+  .row-example
+    .container-inner-row-example
+      .col-33
+        .col-33-tab
+          table
+            tbody tr
+              td
+                padding: 10px 5px
+
+@media (max-width: 1000px)
+  .section-banner
+    height: 50vh
+    .section-inner-banner
+      @include PaddingMobile
+      padding-bottom: 0px
+  .section-for-the-people
+    margin-bottom: 50px
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        .group-left-row-50
+          margin-right: 0px
+        .group-right-row-50
+          margin-left: 0px
+        .group-content-row-50
+          margin-top: 50px
+          .title-for-the-people
+            margin: 0 auto 50px auto
+            text-align: center
+        .group-img-row-50
+          .wp-block-group__inner-container
+            height: 450px
+            figure, img
+              height: 100%
+  .section-for-the-family
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        flex-direction: column-reverse
+  .row-example
+    margin-bottom: 0px
+    .container-inner-row-example
+      gap: unset
+      flex-direction: column
+      .col-33
+        width: 100%
+        figure
+          max-height: 450px
+          img
+            object-fit: cover
+            height: 100%
+        .col-33-txt
+          padding: 30px 0
+        .col-33-tab
+          max-width: 600px
+          table
+            tbody
+              tr
+                td
+                  padding: 15px
+      .col-symptoms, .col-solutions
+        @include PaddingMobile
+        padding-top: 80px
+        padding-bottom: 80px
+        figure
+          max-width: 600px
+  .section-full-ftc
+    padding: 0px
+    margin-bottom: 50px
+    .group-content-row-50
+      @include PaddingMobile
+  .section-for-the-couple
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        .group-content-row-50
+          .title-for-couple
+            margin: 50px auto
+
+  .row-img-for-the-couple
+    margin-bottom: 0px
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        flex-direction: column-reverse
+  .group-pink-cover
+    @include PaddingMobile
+    margin-bottom: 0px
+    padding-bottom: 20px
+    .container-inner-pink
+      padding: 30px
+      .txt-group-pink-cover
+        text-align: center
+
+
+
+
+
+@media (max-width: 800px)
+  .section-banner
+    height: 450px
+
+@media (max-width: 600px)
+  .section-for-the-people
+    .container-inner-row-img-content-50
+      .wp-block-group__inner-container
+        .group-img-row-50
+          .wp-block-group__inner-container
+            height: auto
+
+
+
+
+@media (max-width: 500px)
+  .section-banner
+    .section-inner-banner
+      .wp-block-group__inner-container
+        padding: 30px 15px
+        .content-inner-banner
+          .txt-content-banner
+            margin-top: 15px!important

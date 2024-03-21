@@ -10,7 +10,7 @@
         <div class="site-container">
             <header>
                 <div class="bloc-logo-desktop">
-                    <img class="logo-default" src="./wp-content/themes/cecref/assets/img/logo.png">
+                    <img class="logo-default" src="/wp-content/themes/cecref/assets/img/logo.png">
                     <a href="/" class="link-logo-header"></a>
                 </div>
                 <div class="btn-form-princ btn-menu-mobile">

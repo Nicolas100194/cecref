@@ -4,14 +4,14 @@ aside
   background-color: $cSecond
   color: $cWhite
   padding-top: 50px
-  padding-bottom: 50px
   @include PaddingDesktop
   .group-inner-aside
     margin: auto
     max-width: 1650px
     .row-inner-aside
+      justify-content: space-between
       .column-inner-aside
-        flex-basis: 60%
+        flex-basis: 70%
         .title-col-aside
           font-size: 30px
           font-family: 'RobotoBold'
@@ -31,13 +31,83 @@ aside
             padding-top: 10px
             font-size: 13px
       .img-aside
-        flex-basis: 40%
+        flex-basis: 30%
         height: 350px
         img
           height: 100%
           object-fit: contain
 
+@media (max-width: 1500px)
+  aside
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          .tab-aside
+            table
+              td
+                padding: 20px 15px
 
+@media (max-width: 1280px)
+  aside
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          flex-basis: 60%
 
+@media (max-width: 1125px)
+  aside
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          .tab-aside
+            table
+              td
+                //padding: 20px 15px
 
+@media (max-width: 1000px)
+  aside
+    @include PaddingMobile
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          flex-basis: 100%
+          align-items: center
+          .title-col-aside
+            text-align: center
+          .tab-aside
+            width: 100%
+            padding-top: 35px
+            table
+              transform: unset
+              td
+                padding: 30px
+                text-align: center
+        .img-aside
+          display: none
+
+@media (max-width: 1000px)
+  aside
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          .tab-aside
+            table, figcaption
+              max-width: 650px
+              margin: auto
+            table
+              tr
+                display: flex
+                flex-direction: column
+                td
+                  margin: 2px 0
+
+@media (max-width: 460px)
+  aside
+    .group-inner-aside
+      .row-inner-aside
+        .column-inner-aside
+          .tab-aside
+            table
+              td
+                padding: 25px
 

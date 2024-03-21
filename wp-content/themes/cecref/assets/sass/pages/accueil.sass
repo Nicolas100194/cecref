@@ -252,11 +252,13 @@
           object-fit: cover
       .group-btn-i-s
         position: absolute
+        width: 100%
         left: 50%
         top: 50%
-        transform: translateX(-50%)
+        transform: translate(-50%, -50%)
         .btn-variant
           background-color: $cSecond
+          margin: auto
           border: unset
           a
             color: $cWhite
@@ -412,6 +414,10 @@
             margin-top: 50px!important
   .group-img-second-family
     @include PaddingMobile
+    .inner-container-img-second-family
+      .wp-block-group__inner-container
+        .img-second-family
+          height: 300px
 
 
 

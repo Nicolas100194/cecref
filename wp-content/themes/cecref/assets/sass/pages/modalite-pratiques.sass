@@ -1,0 +1,44 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.banner-modalite-pratique
+  margin-bottom: 150px
+
+
+.row-img-content-50
+  .img-modalite-pratique
+    figure
+      display: flex
+      img
+        object-fit: cover
+  .content-modalite-pratique
+    flex-basis: 50%
+    justify-content: center
+    .group-list-modalite-pratique
+      .list-localisation
+        &:before
+          background-image: url("../icons/local.png")
+      .list-phone
+        &:before
+          background-image: url("../icons/phone.png")
+
+.leaflet-container
+  height: 800px
+
+@media (max-width: 1000px)
+  .row-img-content-50
+    margin-bottom: 25px
+    .img-modalite-pratique
+      margin-bottom: 50px!important
+      .wp-block-group__inner-container
+        height: 350px
+    .content-modalite-pratique
+      .group-list-modalite-pratique
+        margin: 25px auto 0 auto!important
+        width: auto
+
+
+@media (max-width: 800px)
+  .banner-modalite-pratique
+    height: 300px
+    margin-bottom: 120px

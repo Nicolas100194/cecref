@@ -1,86 +1,8 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
 
-.text-with-color-emb
-  display: flex
-  position: relative
-  align-items: center
-  text-transform: uppercase
-  color: $cPrinc
-  font-family: 'RobotoMedium'
-  letter-spacing: 0.85px
-  font-size: 25px
-  padding-left: 10px
-  &:before, &:after
-    position: absolute
-    content: ''
-    display: inline-block
-    background-color: $cPrinc
-  &:before
-    border-radius: 50%
-    width: 5px
-    height: 5px
-    margin-right: 10px
-    left: 0px
-  &:after
-    margin-left: 10px
-    height: 2px
-    width: 40px
-    right: -50px
 
-@media (max-width: 1180px)
-  .text-with-color-emb
-    padding-left: 0px
-    margin: 0 auto 15px auto!important
-    &:before
-      border-radius: unset
-      width: 40px
-      height: 2px
-      left: -50px
-  .group-row-content-family
-    .text-with-color-emb
-      margin: unset!important
-      &:before
-        display: none
-
-
-@media (max-width: 1000px)
-  .text-with-color-emb
-    margin: 0 auto 15px auto!important
-    &:before
-      border-radius: unset
-      width: 40px
-      height: 2px
-  .group-row-content-family
-    .text-with-color-emb
-      margin: 0 auto 15px auto!important
-      &:before
-        display: block
-
-
-
-@media (max-width: 650px)
-  .text-with-color-emb
-    font-size: 21px
-
-
-@media (max-width: 650px)
-  .text-with-color-emb
-    &:before, &:after
-      width: 25px!important
-    &:before
-      left: -35px!important
-    &:after
-      right: -35px!important
-
-@media (max-width: 350px)
-  .text-with-color-emb
-    &:before, &:after
-      display: none!important
-
-
-
-
+//TITRE H1 PRINCIPAUX DES PAGES (communs aux autres page)
 
 .title-h1
   text-transform: uppercase
@@ -100,8 +22,21 @@
     font-size: 28px
     line-height: 35px
 
+//TITRE APERCU NEWS (h2)
+
 .title-excerpt-news
   @include TitleNews
+
+@media (max-width: 1250px)
+  .title-excerpt-news
+    font-size: 30px
+@media (max-width: 650px)
+  .title-excerpt-news
+    text-align: center
+    font-size: 24px
+
+
+//TITRE DE SECTION (communs aux autres pages)
 
 .group-title-h2
   padding: 35px 35px 100px 35px
@@ -148,6 +83,8 @@
         font-size: 30px
 
 
+//title notions
+
 .section-title-with-emb
   .container-title-with-emb
     width: 100%
@@ -180,10 +117,6 @@
       .txt-strong
         font-size: 40px
 
-
-
-
-
 @media (max-width: 786px)
   .section-title-with-emb
     .container-title-with-emb
@@ -191,13 +124,97 @@
         //flex-basis: 70%
       .img-key
 
+//--TITLE PINK AVEC AFTER ET BEFORE (commun)
+
+.text-with-color-emb
+  display: flex
+  position: relative
+  align-items: center
+  text-transform: uppercase
+  color: $cPrinc
+  font-family: 'RobotoMedium'
+  letter-spacing: 0.85px
+  font-size: 25px
+  padding-left: 10px
+  &:before, &:after
+    position: absolute
+    content: ''
+    display: inline-block
+    background-color: $cPrinc
+  &:before
+    border-radius: 50%
+    width: 5px
+    height: 5px
+    margin-right: 10px
+    left: 0px
+  &:after
+    margin-left: 10px
+    height: 2px
+    width: 40px
+    right: -50px
+
+@media (max-width: 1180px)
+  .text-with-color-emb
+    padding-left: 0px
+    margin: 0 auto 15px auto!important
+    &:before
+      border-radius: unset
+      width: 40px
+      height: 2px
+      left: -50px
+  .group-row-content-family
+    .text-with-color-emb
+      margin: unset!important
+      &:before
+        display: none
+
+@media (max-width: 1000px)
+  .text-with-color-emb
+    margin: 0 auto 15px auto!important
+    &:before
+      border-radius: unset
+      width: 40px
+      height: 2px
+  .group-row-content-family
+    .text-with-color-emb
+      margin: 0 auto 15px auto!important
+      &:before
+        display: block
+
+@media (max-width: 650px)
+  .text-with-color-emb
+    font-size: 21px
+
+
+@media (max-width: 650px)
+  .text-with-color-emb
+    &:before, &:after
+      width: 25px!important
+    &:before
+      left: -35px!important
+    &:after
+      right: -35px!important
+
+@media (max-width: 450px)
+  .text-with-color-emb
+    text-align: center
+    &:before, &:after
+      display: none!important
+
+
 
 .group-title-family
   background-color: $cBgPrimary
   padding: 100px 0px
 
 .group-title-news
-  padding-bottom: 0px!important
+  padding-bottom: 50px!important
+@media (max-width: 1000px)
+  .group-title-news
+    padding-bottom: 25px!important
+
+
+//title gallery image equipe thérapeutique
 
 .title-content-gallery
   text-transform: uppercase
@@ -206,6 +223,9 @@
   font-family: 'RobotoBold'
   margin-bottom: 20px!important
   color: $cText
+  text-align: center
+
+//title h2 espace consultation
 
 .title-with-icon
   color: $cPrinc
@@ -214,11 +234,44 @@
   font-family: 'RobotoBold'
   display: flex
   line-height: 40px
+  align-items: stretch
   letter-spacing: 0.25px
   margin-bottom: 20px!important
   &:before
     content: ''
     display: inline-block
     width: 40px
-    height: 40px
     margin-right: 10px
+
+@media (max-width: 1000px)
+  .title-with-icon
+    margin: auto
+    flex-direction: column
+    align-items: center
+    &:before
+      height: 40px
+      margin-bottom: 10px
+
+@media (max-width: 450px)
+  .title-with-icon
+    font-size: 24px
+    line-height: 30px
+    &:before
+      width: 50%
+      margin-right: 0px
+
+//titre paragraphe equipe thérapeutique (commun)
+
+.title-second-b
+  font-size: 36px
+  font-family: 'RobotoBold'
+  color: $cText
+@media (max-width: 1350px)
+  .title-second-b
+    font-size: 30px
+@media (max-width: 1180px)
+  .title-second-b
+    text-align: center
+@media (max-width: 400px)
+  .title-second-b
+    font-size: 26px

@@ -1,37 +1,101 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
 
-.container-article
-  max-width: 1650px
-  margin: auto
+.group-article
+  @include PaddingDesktop
+  padding-bottom: 50px
   display: flex
-  margin: 50px auto
-  height: 430px
-  align-items: stretch
-  box-shadow: 0px 3px 45px $cShadowNews
-  .column-thumbnail
-    min-width: 30%
-    img
-      height: 100%
-      display: block
-      margin: auto
-      width: 100%
-      object-fit: cover
-  .column-content
-    position: relative
-    min-width: 70%
-    padding-left: 50px
+  justify-content: center
+  .container-article
     display: flex
-    height: 100%
-    flex-direction: column
-    .date
-      @include Date
-      position: absolute
-      top: 50px
-    .title-excerpt-news
-      margin-top: 80px
-    .p
-      max-width: 70%
-    .group-btn-news
-      position: absolute
-      bottom: 50px
+    max-width: 1650px
+    width: 100%
+    height: 400px
+    align-items: stretch
+    box-shadow: 0px 3px 45px $cShadowNews
+    .column-thumbnail
+      width: 450px
+      img
+        height: 100%
+        display: block
+        margin: auto
+        width: 100%
+        object-fit: cover
+    .column-content
+      position: relative
+      width: calc(100% - 450px)
+      padding-left: 50px
+      padding-right: 15px
+      display: flex
+      height: 100%
+      padding-bottom: 50px
+      justify-content: space-between
+      flex-direction: column
+      .date
+        @include Date
+        position: absolute
+        top: 50px
+      .title-excerpt-news
+        margin-top: 80px
+      .p
+        max-width: 70%
+      .group-btn-news
+
+
+@media (max-width: 1600px)
+  .group-article
+    .container-article
+      .column-content
+        .p
+          max-width: 95%
+
+@media (max-width: 1250px)
+  .group-article
+    .container-article
+      .column-thumbnail
+        width: 350px
+      .column-content
+        padding-bottom: 25px
+        padding-left: 25px
+        width: calc(100% - 350px)
+        .date
+          top: 25px
+        .title-excerpt-news
+          margin-top: 50px
+          margin-bottom: 0px
+        .group-btn-news
+          bottom: 25px
+
+@media (max-width: 1000px)
+  .group-article
+    @include PaddingMobile
+    padding-bottom: 15px
+    .container-article
+      flex-direction: column
+      height: auto
+      .column-thumbnail, .column-content
+        width: 100%
+        height: auto
+      .column-thumbnail
+        max-height: 500px
+      .column-content
+        padding: 0px 15px 15px 15px
+        .title-excerpt-news
+          margin-bottom: 25px
+        .p
+          max-width: 100%
+
+@media (max-width: 650px)
+  .group-article
+    .container-article
+      .column-content
+        .date
+          left: 50%
+          transform: translateX(-50%)
+          top: 20px
+
+@media (max-width: 500px)
+  .group-article
+    .container-article
+      .column-thumbnail
+        min-height: 250px

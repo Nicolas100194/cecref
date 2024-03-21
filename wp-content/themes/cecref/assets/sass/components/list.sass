@@ -1,27 +1,50 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
 
-.group-list-with-arrow, .group-list-with-underline
+.group-list-with-arrow, .group-list-with-underline, .group-list-modalite-pratique
   color: $cPrinc
-  line-height: 30px
+  //line-height: 30px
   font-size: 18px
   margin: 20px 0!important
   width: 100%
   li
     font-family: 'RobotoBold'
     display: flex
-    line-height: 25px
+    //line-height: 25px
+    align-items: center
     margin-bottom: 15px
     &:before
       content: ''
       display: inline-block
-      width: 25px
-      height: 25px
+      width: 35px
+      height: 35px
+      min-width: 35px
       background-image: url("../icons/arrow-pink-list.png")
       @include BgContain
       margin-right: 10px
+
+
 
 .group-list-with-underline
   li
     border-bottom: solid 1px $cPrinc
     padding-bottom: 10px
+
+.group-list-team
+  color: $cPrinc
+  font-size: 18px
+  margin-top: 15px!important
+  li
+    display: flex
+    align-items: center
+    &:before
+      content: ''
+      display: block
+      background-image: url("../icons/diplome.png")
+      @include BgContain
+      margin-right: 15px
+      width: 45px
+      min-width: 45px
+      height: 45px
+    &:first-of-type
+      margin-bottom: 10px
