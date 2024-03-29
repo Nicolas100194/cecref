@@ -1,10 +1,6 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
 
-.banner-modalite-pratique
-  margin-bottom: 150px
-
-
 .row-img-content-50
   .img-modalite-pratique
     figure
@@ -24,6 +20,9 @@
 
 .leaflet-container
   height: 800px
+  .leaflet-pane
+    z-index: 1
+
 
 @media (max-width: 1000px)
   .row-img-content-50
@@ -37,8 +36,3 @@
         margin: 25px auto 0 auto!important
         width: auto
 
-
-@media (max-width: 800px)
-  .banner-modalite-pratique
-    height: 300px
-    margin-bottom: 120px

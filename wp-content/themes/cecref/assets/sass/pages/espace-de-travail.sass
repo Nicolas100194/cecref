@@ -1,0 +1,93 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.section-banner-space
+  max-height: 450px
+.row-ax
+  padding-bottom: 100px
+  @include PaddingDesktop
+  .container-row-ax
+    @include AdjustContent
+    align-items: stretch
+    justify-content: space-between
+    gap: unset
+    .container-row-axs
+
+      gap: unset
+      align-items: stretch
+      .emp-the-ax
+        border-right: solid 1px $cGray
+        padding: 0 30px
+        flex: 1 1 0
+        justify-content: center
+        align-items: center
+        text-align: center
+        .icon-ax
+          width: 80px
+        .the-ax
+          font-size: 25px
+          letter-spacing: 0.5px
+          color: $cText
+          font-family: 'RobotoBold'
+          margin-top: 20px
+
+        &:last-of-type
+          border-right: none
+
+.section-primary-work-space
+  padding: 100px 0px!important
+
+
+@media (max-width: 1195px)
+  .row-ax
+    padding-bottom: 25px
+    .container-row-ax
+      .container-row-axs
+        .emp-the-ax
+          .the-ax
+            font-size: 20px
+
+@media (max-width: 1000px)
+  .row-ax
+    padding: 0px
+  .section-primary-work-space
+    padding: 0px!important
+    .container-section
+      .wp-block-group__inner-container
+        .inner-bloc-content-work-space
+          padding: 15px!important
+          background-color: $cGray2!important
+          box-shadow: unset
+    .container-col-mob
+      .wp-block-group__inner-container
+        flex-direction: column-reverse!important
+
+@media (max-width: 800px)
+  .row-ax
+    .container-row-ax
+      .container-row-axs
+        .emp-the-ax
+          padding: 0 15px
+          .icon-ax
+            width: 55px
+          .the-ax
+            font-size: 18px
+
+@media (max-width: 700px)
+  .site-container .section-info-primary .container-section .wp-block-group__inner-container .group-img-info-primary .img-info-space
+    height: 350px
+
+@media (max-width: 600px)
+  .row-ax
+    .container-row-ax
+      width: 100%
+      .container-row-axs
+        flex-direction: column
+        flex-basis: 100%
+        padding: 0 15px
+        .emp-the-ax
+          border-right: unset
+          border-bottom: solid 1px $cGray
+          margin-bottom: 20px
+          .the-ax
+            margin-bottom: 20px

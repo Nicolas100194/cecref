@@ -1,0 +1,72 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.section-banner
+  height: 60vh
+  max-height: 650px
+  overflow-y: hidden
+  .wp-block-group__inner-container, figure, img
+    height: 100%
+    .img-banner
+      position: relative
+      img
+        width: 100%
+        object-fit: cover
+        object-position: center 10%
+      &:before
+        content: ''
+        position: absolute
+        background-color: $cBgFiveBanner
+        left: 0
+        right: 0
+        bottom: 0
+        top: 0
+        display: inline-block
+.section-inner-banner
+  padding-top: 0px
+  padding-bottom: 0px
+  transform: translateY(-50%)
+  @include PaddingDesktop
+  .wp-block-group__inner-container
+    background-color: $cGray2
+    padding: 50px
+    max-width: 1150px
+    border-radius: 10px
+    @include BoxShadowBanner
+    .content-inner-banner
+      .txt-subtitle-pink
+        color: $cPrinc
+        font-family: 'RobotoMediumItalic'
+      .txt-content-banner
+        text-align: center
+        margin: 35px auto 0 auto
+
+@media (max-width: 1550px)
+  .section-banner
+    height: unset
+
+@media (max-width: 1000px)
+  .section-inner-banner
+    @include PaddingMobile
+    padding-bottom: 0px
+    transform: translateY(-25%)
+
+@media (max-width: 650px)
+  .section-inner-banner
+    .wp-block-group__inner-container
+      padding: 25px
+
+@media (max-width: 600px)
+  .section-banner
+    height: 200px
+  .section-inner-banner
+    transform: translateY(0px)
+    padding-top: 30px
+    padding-bottom: 30px
+    .wp-block-group__inner-container
+      padding: unset
+      box-shadow: unset
+
+@media (max-width: 480px)
+  .section-banner
+    height: 165px

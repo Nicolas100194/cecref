@@ -1,65 +1,89 @@
 @import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
 
 .group-header-homepage
   max-height: 65vh
-  min-height: 350px
+  min-height: 650px
   display: flex
   .wp-block-group__inner-container
     display: flex
     flex-direction: column
     position: relative
+    width: 100%
     .figure-img-header-homepage
       display: flex
       height: 100%
       img
         object-fit: cover
-    .group-column-card-header
+        width: 100%
+    .row-space-card-header
+      max-width: 960px
       position: absolute
       bottom: 0
+      gap: 0px
       left: 50%
       transform: translate(-50%, 50%)
-      max-width: 1000px
-      width: 100%
-      margin: auto
-      gap: unset
-      .card-header
-        display: flex
-        flex-direction: column
-        padding: 50px 50px
-        font-size: 28px
-        text-transform: uppercase
-        cursor: pointer
-        .icon-card-header
-          text-align: center
-          padding-bottom: 25px
+      .card-space-homepage
+        position: relative
+        width: 350px
+        height: 280px
+        transition: transform 0.3s ease
+        &:hover
+          transform: scale(1.05)
+        &:before
+          content: ''
+          display: block
           width: 80px
-          margin: auto
-        .title-card-header
-          width: 100%
-          display: inline-block
-          text-align: center
+          height: 80px
+          margin: 15% auto 0 auto
+          @include BgContain
+        a
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          top: 0
           color: $cWhite
+          display: flex
+          justify-content: center
+          align-items: center
+          font-size: 30px
           font-family: 'RobotoBold'
-        &:nth-of-type(1)
-          background-color: $cPrinc
-        &:nth-of-type(2)
-          background-color: $cThird
-          margin: 0 15px
-        &:nth-of-type(3)
-          background-color: $cFour
+          padding: 35% 15% 0 15%
+          text-align: center
+      .card-space-work
+        background-color: $cPrinc
+        &:before
+          background-image: url("../icons/icon-espace-de-travail.png")
+      .card-space-consultation
+        margin: 0 15px
+        background-color: $cThird
+        &:before
+          background-image: url("../icons/icon-espace-consultation.png")
+      .card-space-search
+        background-color: $cFour
+        &:before
+          background-image: url("../icons/icon-espace-de-recherche.png")
+
+
+
+
 
 
 .section-primary-home
   padding-top: 300px!important
   padding-bottom: 200px!important
-  background-color: $cBgPrimary
+  background-color: $cGray2
+
 
 .section-title-palo-alto
+  background-color: $cGray3
   .subtitle-palo-alto
     font-weight: 600
 
 
 .section-palo-alto
+  background-color: $cGray3
   padding-bottom: 75px
   @include PaddingDesktop
   .container-section
@@ -81,7 +105,7 @@
               object-fit: cover
 
 .group-btn-center
-  margin-bottom: 100px
+  background-color: $cGray3
   .group-btn-therapeutes
     .btn-form-princ
       margin: auto
@@ -89,7 +113,6 @@
 
 
 .group-notions
-
   .wp-block-group__inner-container
     display: flex
     color: $cWhite
@@ -160,7 +183,7 @@
         .p
           color: $cWhite
           padding-top: 120px
-          max-width: 550px
+          max-width: 750px
 
 .group-img-family
   position: relative
@@ -212,7 +235,7 @@
 .group-row-content-family
   padding-top: 100px
   padding-bottom: 70px
-  background-color: $cBgPrimary
+  background-color: $cGray2
   @include PaddingDesktop
   justify-content: center
   .inner-container-content-family
@@ -235,7 +258,7 @@
   padding-bottom: 100px
 
 .group-img-second-family
-  background-color: $cBgPrimary
+  background-color: $cGray2
   @include PaddingDesktop
   justify-content: center
   .inner-container-img-second-family
@@ -263,6 +286,95 @@
           a
             color: $cWhite
             padding: 0 50px!important
+
+.latest-articles-homepage
+  padding-bottom: 50px
+  @include PaddingDesktop
+  .wp-block-group__inner-container
+    display: flex
+    @include AdjustContent
+    justify-content: center
+    gap: 10px
+    .bloc-info-latest-articles, .container-view-article
+      //flex: 1 1 0
+    .bloc-info-latest-articles
+      background-color: $cPrinc
+      color: $cWhite
+      justify-content: center
+      align-items: center
+      padding: 15px
+      flex-basis: 35%
+      .title-bloc-latest-articles
+        font-size: 35px
+        text-align: center
+        margin-bottom: 20px
+      .btn-form-princ
+        border: solid 2px $cWhite
+        a
+          color: $cWhite
+
+    .container-view-article
+      flex-basis: 32.5%
+      display: flex
+      flex-direction: column
+      position: relative
+      width: 500px
+      height: 500px
+      justify-content: flex-end
+      .link-latest-article
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        cursor: pointer
+        .thumbnail-article
+          position: absolute
+          object-fit: cover
+          height: 100%
+          width: 100%
+        &:after
+          content: ''
+          position: absolute
+          display: inline-block
+          width: 100%
+          height: 100%
+          background: linear-gradient(0deg, rgba(34,27,105,1) 0%, rgba(51,51,51,0.1) 100%)
+      .title-article
+        position: relative
+      .title-article, .container-date-article
+        color: $cWhite
+        z-index: 2
+        padding: 0 30px 30px 30px
+      .title-article
+        font-size: 30px
+        font-family: 'RobotoBold'
+      .container-date-article
+        p
+          background-color: $cThird
+          padding: 15px
+          width: 150px
+          color: $cWhite
+          text-align: center
+          border-radius: 5px
+.title-partners
+  padding-top: 50px
+
+.title-partners, .row-partners
+  background-color: $cBgFive2
+
+.row-partners
+  padding-bottom: 100px
+  figure
+    display: flex
+    align-items: center
+  .img-left
+    margin-right: 100px
+  .img-right
+    margin-left: 100px
+  img
+    max-width: 350px
+
 
 
 @media (max-width: 1550px)
@@ -306,6 +418,11 @@
             margin-bottom: 20px
           .p
             padding-top: 0px
+  .latest-articles-homepage
+    padding-bottom: 35px
+
+
+
 
 
 @media (max-width: 1240px)
@@ -361,13 +478,6 @@
               margin: auto!important
 
 
-@media (max-width: 1080px)
-  .group-header-homepage
-    .wp-block-group__inner-container
-      .group-column-card-header
-        width: calc(100vw - 30px)
-        .card-header
-          padding: 30px
 
 @media (max-width: 1060px)
   .group-notions
@@ -378,7 +488,7 @@
         width: 100%
       .group-one-notion
         .content-notions
-          align-items: center
+
           h2
           .p
             text-align: unset
@@ -395,12 +505,16 @@
 
 
 @media (max-width: 1000px)
+  .group-header-homepage
+    .wp-block-group__inner-container
+      .row-space-card-header
+        width: calc(100vw - 30px)
   .section-primary-home
     padding: 200px 0 0 0!important
   .section-palo-alto
     @include PaddingMobile
   .group-btn-center
-    margin-bottom: 25px
+    //margin-bottom: 25px
   .group-row-content-family
     @include PaddingMobile
     padding-top: 50px
@@ -418,17 +532,42 @@
       .wp-block-group__inner-container
         .img-second-family
           height: 300px
-
+  .latest-articles-homepage
+    padding: 0px
+    .wp-block-group__inner-container
+      flex-direction: column
+      gap: unset
+      .bloc-info-latest-articles
+        padding: 30px 15px
+      .container-view-article
+        width: auto
+        flex-basis: unset
+        height: 400px
+  .title-partners
+    padding-bottom: 50px
+  .row-partners
+    padding-bottom: 50px
+    .img-left, .img-right
+      img
+        width: 250px
+    .img-left
+      margin-right: 50px
+    .img-right
+      margin-left: 50px
 
 
 @media (max-width: 860px)
   .group-header-homepage
     .wp-block-group__inner-container
-      .group-column-card-header
-        .card-header
-          padding: 30px 15px
-  .group-btn-center
-    //padding-bottom: 50px
+      .row-space-card-header
+        .card-space-homepage
+          height: 230px
+          &:before
+            width: 55px
+            height: 55px
+          a
+            font-size: 26px
+            //padding: 35% 10% 0 10%
 
 @media (max-width: 800px)
   .group-notions
@@ -451,28 +590,59 @@
         .content-notions
           padding: 50px 15px
           h2
+            margin: 0 auto 20px auto
             text-align: center
           .p
             text-align: center
 
 
 @media (max-width: 781px)
-  .group-header-homepage
-    .wp-block-group__inner-container
-      .group-column-card-header
-        transform: translate(-50%, 85%)
-        .card-header:nth-of-type(2)
-          margin: 15px 0px
-  .section-primary-home
-    padding: 550px 0 0 0!important
-  .group-btn-center
-    margin-bottom: 50px
+  .row-primary
+    .container-section
+      .wp-block-group__inner-container
+        .group-img-row-50
+          .wp-block-group__inner-container
+            .img-left
+              img
+
+                width: 100%!important
   .group-img-family
     .img-family
       height: unset
       max-height: unset
   .group-title-family
-    padding: 50px 0
+    padding: 50px 15px
+
+@media (max-width: 725px)
+  .group-header-homepage
+    max-height: unset
+    .wp-block-group__inner-container
+      .row-space-card-header
+        position: unset
+        transform: unset
+        width: unset
+        flex-direction: column
+        .card-space-homepage
+          width: 100%
+          height: 150px
+          &:before
+            margin: 25px auto
+          a
+            padding: 60px 0 0 0
+  .section-primary-home
+    padding: 0px!important
+
+@media (max-width: 700px)
+  .row-partners
+    .container-section
+      .wp-block-group__inner-container
+        flex-direction: column
+        figure
+          margin: unset
+        .img-left
+          margin-bottom: 50px
+
+
 
 @media (max-width: 550px)
   .group-wrap-img-family
@@ -484,3 +654,9 @@
       .icon-img-family
         height: 50px
         width: 50px
+  .row-partners
+    .container-section
+      .wp-block-group__inner-container
+        figure
+          img
+            width: 200px

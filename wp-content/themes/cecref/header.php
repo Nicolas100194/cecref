@@ -8,10 +8,15 @@
 </head>
     <body>
         <div class="site-container">
-            <header>
-                <div class="bloc-logo-desktop">
-                    <img class="logo-default" src="/wp-content/themes/cecref/assets/img/logo.png">
-                    <a href="/" class="link-logo-header"></a>
+            <header id="top-site">
+                <div class="bloc-logo-desktop"><?php
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    if (has_custom_logo()) {
+                        echo '<img class="logo-default" src="'.esc_url($logo[0]).'">';
+                    }
+                    ?>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="link-logo-header"></a>
                 </div>
                 <div class="btn-form-princ btn-menu-mobile">
                     <a class="link-btn-form-princ"></a>

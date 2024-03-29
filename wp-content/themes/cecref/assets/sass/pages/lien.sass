@@ -1,0 +1,83 @@
+@import "../../../../cecref/assets/sass/utils/variables"
+@import "../../../../cecref/assets/sass/utils/mixins"
+
+.section-banner-the-link
+  .wp-block-group__inner-container
+    .img-banner
+      img
+        object-position: center
+
+.row-links
+  margin-bottom: 50px
+  .group-left-row-50
+    margin-right: 25px!important
+  .group-right-row-50
+    margin-left: 25px!important
+
+  .the-link
+    background-color: $cWhite
+    padding: 50px 90px 50px 50px
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      right: -8px
+      top: -8px
+      border: solid 8px $cGray2
+      background-color: $cPrinc
+      background-image: url("../icons/link.png")
+      background-size: 70%
+      background-position: center
+      background-repeat: no-repeat
+      width: 80px
+      height: 80px
+
+  .the-link-cSecond
+    &:after
+      background-color: $cSecond
+
+  .the-link-cThird
+    &:after
+      background-color: $cThird
+
+  .the-link-cFour
+    &:after
+      background-color: $cFour
+
+@media (max-width: 1200px)
+  .row-links
+    .the-link
+      padding: 30px 80px 30px 30px
+      &:after
+        width: 60px
+        height: 60px
+
+@media (max-width: 1000px)
+  .row-links
+    margin-bottom: 0px
+    .group-right-row-50, .group-left-row-50
+      margin: 7.5px 0px!important
+    .the-link
+      padding-right: 120px
+      &:after
+        width: 100px
+        background-size: 50%
+        height: 100%
+
+@media (max-width: 600px)
+
+  .row-links
+    .the-link
+      padding: 15px 15px 70px 15px
+      &:after
+        position: absolute
+        right: 0
+        left: 0
+        bottom: 0
+        width: 100%
+        height: 50px
+        border: none
+        top: unset
+
+        background-size: 40px

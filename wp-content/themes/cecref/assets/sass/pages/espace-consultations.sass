@@ -1,28 +1,5 @@
 @import "../../../../cecref/assets/sass/utils/variables"
 @import "../../../../cecref/assets/sass/utils/mixins"
-.section-banner
-  height: 60vh
-  margin-bottom: 250px
-  .wp-block-group__inner-container, figure, img
-    height: 100%
-    .img-banner
-      img
-        width: 100%
-        object-fit: cover
-  .section-inner-banner
-    transform: translateY(-50%)
-
-    @include PaddingDesktop
-    .wp-block-group__inner-container
-      background-color: $cWhite
-      padding: 50px
-      max-width: 1150px
-      .content-inner-banner
-        .txt-subtitle-pink
-          color: $cPrinc
-          font-family: 'RobotoMediumItalic'
-        .txt-content-banner
-          margin: 35px auto 0 auto
 
 .section-for-the-people, .section-for-the-couple
   .group-img-row-50
@@ -149,11 +126,7 @@
                 padding: 10px 5px
 
 @media (max-width: 1000px)
-  .section-banner
-    height: 50vh
-    .section-inner-banner
-      @include PaddingMobile
-      padding-bottom: 0px
+
   .section-for-the-people
     margin-bottom: 50px
     .container-inner-row-img-content-50
@@ -233,9 +206,7 @@
 
 
 
-@media (max-width: 800px)
-  .section-banner
-    height: 450px
+
 
 @media (max-width: 600px)
   .section-for-the-people

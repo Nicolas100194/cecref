@@ -12,9 +12,86 @@
 body
   position: relative
   overflow-x: hidden
+  background-color: $cGray2
+  scroll-behavior: smooth
 
 .site-container
+  position: relative
   transition: 0.3s
+
+.redirect-sticky
+  position: relative
+  cursor: pointer
+  opacity: 0
+  transition: .3s
+  border-radius: 50%
+  position: fixed
+  //@include BoxShadowSticky
+  right: 20px
+  bottom: 20px
+  width: 70px
+  height: 70px
+  @include BoxShadowSticky
+  background-color: $cPrinc
+  background-image: url("../icons/redirect-top.png")
+  background-size: 50%
+  background-position: center
+  background-repeat: no-repeat
+  z-index: 999
+  .link-redirect-sticky
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+
+
+.redirect-sticky-display
+  opacity: 1
+  transition: .3s
+
+.sticky
+  z-index: 99
+  position: fixed
+  display: flex
+  align-items: center
+  background-color: $cPrinc
+  color: $cWhite
+  text-transform: uppercase
+  right: 0
+  font-size: 18px
+  font-family: 'RobotoBold'
+  padding: 20px 20px 20px 20px
+  top: 50%
+  transform: translateY(-50%)
+  border-radius: 5px 0 0 5px
+  cursor: pointer
+  @include BoxShadowSticky
+  .img-sticky
+    width: 30px
+@media (max-width: 1000px)
+  .sticky
+    padding: 15px
+    .img-sticky
+      width: 25px
+
+@media (max-width: 850px)
+  .redirect-sticky
+    left: 20px
+    right: unset
+  .sticky
+    top: unset
+    bottom: 0
+    border-radius: 5px 0 0 0
+
+
+.aside-right-display
+  transform: translateX(0px)!important
+  z-index: 100
+  transition: .6s
+
+
 
 .p, .p-italic
   color: $cText
@@ -69,6 +146,9 @@ figure
               margin-left: auto
 
 .section-info-primary
+  .container-section-img-left
+    .wp-block-group__inner-container
+      justify-content: flex-end
   .container-section
     max-width: 1650px
     margin: auto
@@ -77,10 +157,12 @@ figure
       position: relative
       .group-content-info-primary
         background-color: $cWhite
+        @include BoxShadowDiv
         display: flex
         z-index: 2
         width: 65%
         padding: 50px
+        //margin-right: 50px
         .wp-block-group__inner-container
           align-items: center
           .inner-bloc-content-info-primary
@@ -91,6 +173,9 @@ figure
               margin: 25px 0 10px 0
             .group-btn-intro-therapies
               margin-top: 25px
+      .group-img-left
+        left: 0
+        right: unset
       .group-img-info-primary
         height: 120%
         width: 40%
@@ -127,6 +212,7 @@ figure
           .group-content-info-primary, .group-img-info-primary
             width: 100%
           .group-content-info-primary
+            background-color: $cBgPrimary
             padding: 50px 15px 25px 15px
             .wp-block-group__inner-container
               .inner-bloc-content-info-primary
@@ -148,8 +234,8 @@ figure
     .wp-block-group__inner-container
       display: flex
       height: 100%
-      .group-right-row-50, .group-left-row-50
-        flex-basis: 50%
+      .group-right-row, .group-left-row-50, .group-left-row, .group-right-row-50
+        flex-basis: 50%!important
         justify-content: center
       .group-right-row-50
         margin-left: 35px
@@ -160,9 +246,9 @@ figure
           img
             height: 300px
         .img-row-50
-          height: 100%
+          height: 100%!important
           img
-            height: 100%
+            height: 100%!important
             object-fit: cover
 
 @media (max-width: 1000px)
